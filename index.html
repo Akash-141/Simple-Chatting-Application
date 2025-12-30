@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Chat Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 class="main-title">Socket Chat Application - Dual View</h1>
+
+        <!-- Connection Configuration -->
+        <div class="config-panel" id="configPanel">
+            <h2>Setup Chat</h2>
+
+            <div class="form-group">
+                <label for="connectionType">Select Connection Type:</label>
+                <select id="connectionType" title="Select connection type">
+                    <option value="tcp">TCP (Connection-Oriented)</option>
+                    <option value="udp">UDP (Connectionless)</option>
+                </select>
+            </div>
+
+            <button id="connectBtn" class="btn btn-primary">Start Chat (Connect Both)</button>
+        </div>
+
+        <!-- Dual Chat Interface -->
+        <div class="dual-chat-container" id="dualChatPanel">
+            <!-- Server Side -->
+            <div class="chat-side">
+                <div class="container">
+                    <div class="chat-panel">
+                        <div class="chat-header">
+                            <div class="connection-info">
+                                <span class="status-indicator" id="statusIndicatorServer"></span>
+                                <span id="connectionInfoServer">Server</span>
+                            </div>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessagesServer">
+                            <!-- Server Messages -->
+                        </div>
+
+                        <div class="chat-input-area">
+                            <div class="character-counter" id="characterCounterServer">0 / ∞</div>
+                            <textarea id="messageInputServer" placeholder="Type server message and press Enter..." disabled></textarea>
+                            <button id="sendBtnServer" class="btn btn-primary" disabled>Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Side -->
+            <div class="chat-side">
+                <div class="container">
+                    <div class="chat-panel">
+                        <div class="chat-header">
+                            <div class="connection-info">
+                                <span class="status-indicator" id="statusIndicatorClient"></span>
+                                <span id="connectionInfoClient">Client</span>
+                            </div>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessagesClient">
+                            <!-- Client Messages -->
+                        </div>
+
+                        <div class="chat-input-area">
+                            <div class="character-counter" id="characterCounterClient">0 / ∞</div>
+                            <textarea id="messageInputClient" placeholder="Type client message and press Enter..." disabled></textarea>
+                            <button id="sendBtnClient" class="btn btn-primary" disabled>Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-footer" id="controlsFooter">
+            <button id="disconnectBtn" class="btn btn-danger">Disconnect Both</button>
+            <div class="help-text">
+                <strong>Instructions:</strong> Both Server and Client are connected. Type in either side and press Enter. Wait for reply before sending another message from the same side. UDP has 1000 char limit.
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
