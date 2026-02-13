@@ -367,3 +367,4 @@ connectionTypeSelect.addEventListener('change', () => {
     updateCharacterCount('client');
 
 });
+
