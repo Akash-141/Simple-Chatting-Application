@@ -24,4 +24,4 @@ except KeyboardInterrupt:
     print("\nChat ended")
 
 conn.close()
-server.close()
+server.close()
