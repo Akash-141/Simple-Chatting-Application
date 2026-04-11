@@ -19,5 +19,3 @@ except KeyboardInterrupt:
 
 client.close()
 
-
-
