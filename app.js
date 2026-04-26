@@ -203,6 +203,7 @@ function sendMessage(role) {
     }
 }
 
+
 // Handle incoming messages
 function handleMessage(data, role) {
     switch (data.type) {
