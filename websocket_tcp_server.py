@@ -2,6 +2,8 @@ import asyncio
 import websockets
 import json
 
+
+
 # Store connected clients and their states
 clients = {}
 client_counter = 0
